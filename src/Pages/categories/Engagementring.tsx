@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Layout } from '../../Components/Layout/Layout'
 import EngagementRing from '../../Components/shop/engagement'
 

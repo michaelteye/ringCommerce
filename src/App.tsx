@@ -9,20 +9,23 @@ import Wedding from './Pages/categories/wedding';
 import Eternalring from './Pages/categories/eternalring';
 import ProductPage from './Pages/product/product';
 
+
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/products" element={<ProductPage />} />
-        <Route path="/bridalset" element={<Bridalset />} />
-        <Route path="/wedding" element={<Wedding />} />
-        <Route path="/engagement" element={<Engagementring />} />
-        <Route path="/eternal" element={<Eternalring />} />
-      </Routes>
-    </BrowserRouter>
+    
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/bridalset" element={<Bridalset />} />
+          <Route path="/wedding" element={<Wedding />} />
+          <Route path="/engagement" element={<Engagementring />} />
+          <Route path="/eternal" element={<Eternalring />} />
+        </Routes>
+      </BrowserRouter>
+    
   );
 };
 
