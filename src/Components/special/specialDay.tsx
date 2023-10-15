@@ -1,12 +1,14 @@
 import SvgRightarrow from '../icons/rightarrow';
-import bridal from '../../assets/images/all4.png'
+import specialDay from '../../assets/images/specialDay.png'
+import handicraft from '../../assets/images/handcraft.png'
+
 
 export const SpecialDay: React.FC = () => {
   return (
     <>
       <div
-        className=" h-[80vh] text-center bg-cover bg-bridal bg-center mx-4"
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${bridal})` }}
+        className=" h-[80vh] text-center bg-cover bg-specialDay bg-center mx-4"
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${specialDay})` }}
       >
         <div className="container mx-auto p-4">
           <div className="md:text-center text-left text-white pt-[350px] ">
@@ -28,8 +30,8 @@ export const SpecialDay: React.FC = () => {
         </div>
       </div>
       <div className="w-full flex md:flex-row flex-col-reverse">
-        <div className=" bg-handicraft w-auto h-[50vh] md:w-[60%] bg-center md:h-[50vh] text-center object-cover md:mx-4 my-10 mx-4" 
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
+        <div className=" w-auto h-[50vh] md:w-[60%] bg-center md:h-[50vh] text-center object-cover md:mx-4 my-10 mx-4" 
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${handicraft})` }}
         >
         </div>
         <div className="md:w-1/2">
