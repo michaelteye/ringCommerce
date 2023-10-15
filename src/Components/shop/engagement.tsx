@@ -6,6 +6,7 @@ import card3 from '../../assets/images/all3.png';
 import card4 from '../../assets/images/all4.png';
 import SvgFavorite from '../icons/favorite';
 import SvgCircle from '../icons/circle';
+import engagement from '../../assets/images/all2.png'
 
 const EngagementRing: React.FC = () => {
   const cards = [card1, card2, card3, card4];
@@ -13,7 +14,7 @@ const EngagementRing: React.FC = () => {
     <>
       <div
         className=" md:h-[80vh] h-[50vh] bg-engagement text-center bg-cover bg-center"
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${engagement})` }}
       >
         <div className="container mx-auto p-4">
           <div className=" text-left text-white md:pt-[500px] pt-[250px] ">

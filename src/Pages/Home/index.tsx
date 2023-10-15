@@ -10,6 +10,7 @@ import { SpecialDay } from '../../Components/special/specialDay';
 import { Testimoney } from '../../Components/Testimoney/Testimoney';
 import { GetInspired } from '../../Components/Inspired/getInspired';
 import { Trends } from '../../Components/trends/trends';
+import homeImage from '../../assets/images/homeImage.png'
 
 
 
@@ -19,7 +20,7 @@ import { Trends } from '../../Components/trends/trends';
 function Home() {
   return (
     <Layout>
-      <div className=" bg-homeImage w-full pt-[414px]">
+      <div className=" w-full pt-[414px]" style={{backgroundImage:`url(${homeImage})`}}>
         <div className="md:text-center text-left text-white">
           <p className="text-white md:text-left text-center font-bold font-clash-display text-[32px] md:text-[72px] pl-2 md:pl-4">
             Captivating Elegance
