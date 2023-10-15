@@ -5,7 +5,7 @@ export const SpecialDay: React.FC = () => {
   return (
     <>
       <div
-        className=" h-[80vh] text-center bg-cover bg-center mx-4"
+        className=" h-[80vh] text-center bg-cover bg-specialDay bg-center mx-4"
         style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${specialDay})` }}
       >
         <div className="container mx-auto p-4">

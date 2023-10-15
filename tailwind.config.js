@@ -15,7 +15,7 @@ module.exports = {
         },
       },
       backgroundImage:{
-        
+        'specialDay': "url('./src/assets/images/specialDay.png')",
         'homeImage':"url('./src/assets/images/homeImage.png')",
         'handicraft':"url('./src/assets/images/handcraft.png')",
         'trends':"url('./src/assets/images/trends.png')",
