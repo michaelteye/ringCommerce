@@ -40,7 +40,7 @@ function Home() {
               <span className='pr-2'>
                   shop Now
               </span>
-              <SvgRightarrow className='pl-4 font-bold bg-white'/>
+              <SvgRightarrow />
             </button>
           </div>
         </div>
