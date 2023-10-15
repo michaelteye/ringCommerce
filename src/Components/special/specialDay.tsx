@@ -1,12 +1,12 @@
 import SvgRightarrow from '../icons/rightarrow';
-import specialDay from '../../assets/images/specialDay.png'
+import bridal from '../../assets/images/all4.png'
 
 export const SpecialDay: React.FC = () => {
   return (
     <>
       <div
-        className=" h-[80vh] text-center bg-cover bg-specialDay bg-center mx-4"
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${specialDay})` }}
+        className=" h-[80vh] text-center bg-cover bg-bridal bg-center mx-4"
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage:`url(${bridal})` }}
       >
         <div className="container mx-auto p-4">
           <div className="md:text-center text-left text-white pt-[350px] ">
