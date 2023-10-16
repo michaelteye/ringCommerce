@@ -1,39 +1,60 @@
 import product from '../../assets/images/Product.png';
+import { useState } from 'react';
 import SvgStar from '../icons/star';
 import SvgCart from '../icons/cart';
+import Details from '../productDetails/details';
 export default function Product() {
+  const [productInfo, setProductInfo] = useState('details');
+
+  const handleProductInfo = (infoType: string) => {
+    return setProductInfo(infoType);
+  };
   const sizes = [4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5];
   return (
     <>
-      <div className=" md:flex grid grid-col-1">
-       
-          <div className="md:flex md:w-[20%] grid grid-cols-2">
-            <ul className="md:w-[40%] md:flex-col flex ">
-              <li className=" py-4">
-                <img src={product} className="md:ml-[150px]" alt="" />
-              </li>
-              <li className=" py-4">
-                <img src={product} className="md:ml-[150px]" alt="" />
-              </li>
-              <li className=" py-4">
-                <img src={product} className="md:ml-[150px]" alt="" />
-              </li>
-              <li className=" py-4">
-                <img src={product} className="md:ml-[150px]" alt="" />
-              </li>
-            </ul>
-          </div>
-          <div className="w-[40%] pl-2 pt-4">
-            <img src={product} className="" alt="" />
-          </div>
-     
+      <div className=" md:flex grid">
+        <div className="md:flex md:w-[20%] grid w-full">
+          <ul className="md:w-[40%] md:ml-0 ml-4 md:flex-col w-[90%] flex">
+            <li className="py-4 ">
+              <img
+                src={product}
+                className="md:ml-[150px] w-[90%] md:w-auto pl-1 "
+                alt=""
+              />
+            </li>
+            <li className="py-4">
+              <img
+                src={product}
+                className="md:ml-[150px] w-[90%] md:w-auto pl-1 "
+                alt=""
+              />
+            </li>
+            <li className="py-4">
+              <img
+                src={product}
+                className="md:ml-[150px] w-[92%] md:w-auto pl-1 "
+                alt=""
+              />
+            </li>
+            <li className="py-4">
+              <img
+                src={product}
+                className="md:ml-[150px] w-[92%] md:w-auto pl-1 ml-2"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div className="md:w-[40%]  md:pl-2 pt-4">
+          <img src={product} className="px-4" alt="" />
+        </div>
         <div>
           <div>
-            <p className="pl-10 pt-2 font-clash-display font-medium leading-[40px] text-[24px]">
+            <p className="md:pl-10 pl-4 pt-2 font-clash-display font-medium leading-[40px] text-[24px]">
               Plain Shaped Wedding Band
             </p>
             <ul className="flex">
-              <li className="pl-10 ">
+              <li className="md:pl-10 pl-4 ">
                 <SvgStar className="mt-2" />
               </li>
               <li className="pl-1">
@@ -55,65 +76,74 @@ export default function Product() {
                 <p className="text-[12px]">(421 Reviews)</p>
               </li>
             </ul>
-            <p className="pl-[45px] text-[20px] pt-2 leading-[30px]">₵ 2,000</p>
-            <p className="border border-[#CECECE] ml-10 mt-4"></p>
+            <p className="md:pl-[45px] pl-4 text-[20px] pt-2 leading-[30px]">
+              ₵ 2,000
+            </p>
+            <p className="border border-[#CECECE] md:ml-10 mt-4 md:w-auto ml-4 w-[90%]"></p>
             <div className="flex justify-between">
-              <p className="pl-10 font-archivo pt-4 leading-[30px]">
+              <p className="md:pl-10 pl-4 font-archivo pt-4 md:leading-[30px]">
                 Ring Size
               </p>
-              <p className="text-right font-archivo pt-4 leading-[30px]">
+              <p className="text-right md:pr-2 pr-4 font-archivo pt-4 md:leading-[30px]">
                 Size Guild
               </p>
             </div>
-            <div>
-              <ul className="flex pl-10 pt-2 pb-4">
+            <div className="md:w-auto md:flex md:flex-col sm:grid sm:grid-cols-1">
+              <ul className="flex md:ml-10 pt-2 ml-3 pb-4  md:w-auto">
                 {sizes.map((size, index) => (
-                  <li className="pr-2" key={index}>
+                  <li className="pr-2 md:w-auto " key={index}>
                     <button
-                      className="w-10 h-10  border border-solid border-black"
+                      className="w-10 h-10 border border-solid border-black "
                       type="button"
                     >
                       {size}
-                    </button>{' '}
+                    </button>
                   </li>
                 ))}
               </ul>
-              <ul className="flex pl-10">
+              <ul className="flex md:ml-10 ml-3">
                 {sizes.map((size, index) => (
                   <li className="pr-2" key={index}>
                     <button
-                      className="w-10 h-10  border border-solid border-black"
+                      className="w-10 h-10 border border-solid border-black"
                       type="button"
                     >
                       {size}
-                    </button>{' '}
+                    </button>
                   </li>
                 ))}
               </ul>
             </div>
-            <p className="pl-10 pt-4 leading-[30px] font-archivo font-medium text-[16px]">
+            <p className="md:pl-10 pl-3 pt-4 leading-[30px] font-archivo font-medium text-[16px]">
               Quality
             </p>
-            <button className="ml-10 w-[40%] border border-solid border-black h-12 my-2">
+            <button className="md:ml-10 w-[40%] ml-4 border border-solid border-black h-12 md:my-2">
               <span className="pr-6">-</span>
               <span className="pr-6">1</span>
               <span className="pr-4">+</span>
             </button>
             <div>
-              <button className="flex text-center justify-center text-white ml-10 mt-4 w-full h-[55px] bg-[#462416]">
+              <button className="flex text-center justify-center text-white md:ml-10 mt-4 w-[92%] md:w-full ml-4 h-[55px] bg-[#462416]">
                 {' '}
                 <span className="pt-2">
                   <SvgCart className="w-6 bg-[#462416]" />
                 </span>
                 <span className="pt-3 pl-1 pr-4">Add to cart</span>
               </button>
-              <button className="border border-solid border-black h-[55px] w-full ml-10 mt-4">
+              <button className="border border-solid border-black h-[55px] w-[92%] ml-4 md:w-full md:ml-10 md:mx-0 mt-4">
                 Add to WishList
               </button>
             </div>
           </div>
         </div>
       </div>
+      <div className="grid grid-cols-2">
+        <button onClick={() => handleProductInfo('details')} className={`font-archivo font-bold ${productInfo==='details' ? 'underline':'font-archivo font-bold'}`}>Details</button>
+        <button onClick={() => handleProductInfo('reviews')} className={`font-archivo font-bold ${productInfo ==='reviews' ? 'underline':''}`}>Reviews</button>
+      </div>
+     
+          { productInfo === 'details' ? <Details /> : '' }
+   
     </>
   );
 }
