@@ -4,8 +4,10 @@ import ring3 from '../../assets/images/ring3.png';
 import ring4 from '../../assets/images/ring4.png';
 import { SlideShow } from '../Slide/slide';
 
+
 export const NewRivals: React.FC = () => {
   const slides = [ring1, ring2, ring3, ring4];
+
 
   return (
     <>

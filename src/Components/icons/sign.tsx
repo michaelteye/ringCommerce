@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgSearch(props: React.SVGProps<SVGSVGElement>) {
+function SvgSign(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="18"
@@ -20,4 +20,4 @@ function SvgSearch(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgSearch;
+export default SvgSign;

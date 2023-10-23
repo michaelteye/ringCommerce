@@ -7,6 +7,7 @@ import SvgFavorite from '../icons/favorite';
 import SvgCart from '../icons/cart';
 import SvgDownArrow from '../icons/downarrow';
 
+
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userPopupOpen, setUserPopupOpen] = useState(false);
@@ -31,7 +32,7 @@ function Navbar() {
   return (
     <nav className=" border-gray-200 bg-[#FAF9E3]">
       <div className="max-w-screen-x1 flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} className="h-8 mr-3" alt="" />
         </Link>
         <div className="flex items-center md:order-2">
@@ -63,7 +64,7 @@ function Navbar() {
                 <ul className="user-actions">
                   <li>
                     <Link
-                      to=""
+                      to="/checkout"
                       className="user-action"
                       onClick={toggleUserPopup}
                     >
@@ -188,24 +189,23 @@ function Navbar() {
                 </div>
               )}
             </li>
-
             <li>
-              <a
-                href="#"
+              <Link
+                to="/about"
                 className="block py-2 pl-3 pr-4 text-black rounded hover-bg-gray-100 md:hover-bg-transparent md:hover-text-blue-700 md:p-0 dark-text-white md:dark-hover-text-blue-500 dark-hover-bg-gray-700 dark-hover-text-white md:dark-hover-bg-transparent dark-border-gray-700"
                 onClick={closeMobileMenu}
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block  py-2 pl-3 pr-4 text-black rounded hover-bg-gray-100 md:hover-bg-transparent md:hover-text-blue-700 md:p-0 dark-text-white md:dark-hover-text-blue-500 dark-hover-bg-gray-700 dark-hover-text-white md:dark-hover-bg-transparent dark-border-gray-700"
+              <Link
+                to="/contact"
+                className="block py-2 pl-3 pr-4 text-black rounded hover-bg-gray-100 md:hover-bg-transparent md:hover-text-blue-700 md:p-0 dark-text-white md:dark-hover-text-blue-500 dark-hover-bg-gray-700 dark-hover-text-white md:dark-hover-bg-transparent dark-border-gray-700"
                 onClick={closeMobileMenu}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
