@@ -31,7 +31,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} exact />
           <Route element={<ProtectedRoute />}>
             <Route path="/shop" element={<Shop />} />
-            <Route path="/products" element={<ProductPage />} />
+            <Route path="/products/item/:product_id" element={<ProductPage />} />
             <Route path="/bridalset" element={<Bridalset />} />
             <Route path="/wedding" element={<Wedding />} />
             <Route path="/engagement" element={<Engagementring />} />

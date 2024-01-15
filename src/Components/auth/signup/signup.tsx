@@ -2,11 +2,11 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import signup1 from '../../../assets/images/signup.png';
 import SvgGoogle from '../../icons/google';
-import { SignUp } from '../../../Hooks/register';
+import { useSignUp } from '../../../Hooks/useRegister';
 
 
 export const RegisterUser = () => {
-const {handleRegistration} = SignUp()
+const {handleRegistration} = useSignUp()
 
   const { handleSubmit, register } = useForm();
   

@@ -9,7 +9,14 @@ import ring2 from '../../assets/images/ring2.png';
 import ring3 from '../../assets/images/ring3.png';
 import ring4 from '../../assets/images/ring4.png';
 import Review from '../productDetails/review';
+import { useShopSDetails } from '../../Hooks/product/useShop';
+import { useParams } from 'react-router-dom';
 export default function Product() {
+
+  // const [details, setDetails] = useState<string>()
+  const {product_id} = useParams()
+
+  const {data:Detail} = useShopSDetails(product_id)
   const slides = [ring1, ring2, ring3, ring4];
   const [productInfo, setProductInfo] = useState('details');
 
@@ -22,7 +29,7 @@ export default function Product() {
       <div className=" md:flex grid">
         <div className="md:flex md:w-[20%] grid w-full">
           <ul className="md:w-[40%] md:ml-0 ml-4 md:flex-col w-[90%] flex">
-            <li className="py-4 ">
+            <li className="py-4">
               <img
                 src={product}
                 className="md:ml-[150px] w-[90%] md:w-auto pl-1 "
@@ -52,9 +59,14 @@ export default function Product() {
             </li>
           </ul>
         </div>
-        <div className="md:w-[40%] md:pl-2 pt-4">
-          <img src={product} className="px-4 h-[100%] opacity-100 filter brightness-30" alt="" />
+        {
+          Detail && 
+          <div key={Detail.key} className="md:w-[40%] md:pl-2 pt-4">
+          <img src={Detail.images} className="px-4 h-[100%] opacity-100 filter brightness-30" alt="" />
         </div>
+
+        }
+        
         <div>
           <div>
             <p className="md:pl-10 pl-4 pt-2 font-clash-display font-medium leading-[40px] text-[24px]">

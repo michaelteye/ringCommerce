@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const queryClient = new QueryClient();
 
-export const SignUp = () => {
+export const useSignUp = () => {
   const navigate = useNavigate();
   const addUser = useMutation({
     mutationFn: async (info: Info) => {
