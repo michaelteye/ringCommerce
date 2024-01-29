@@ -6,8 +6,9 @@ import GetProductDetails from '../GetProductDetails';
 const ProductDetails = () => {
   const [productInfo, setProductInfo] = useState('details');
   const { product_id } = useParams();
-  const { data: shopData, loading: shopLoading } = useShopSDetails(product_id);
-  console.log('the detail is given as ..',shopData)
+  const { data } = useShopSDetails(product_id);
+
+  const {details:shopData} = data
 
   const handleProductInfo = (infoType: string) => {
     return setProductInfo(infoType);

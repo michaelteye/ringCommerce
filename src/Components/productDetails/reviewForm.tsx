@@ -1,21 +1,24 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import SvgClose from '../icons/close';
 import SvgStar from '../icons/star';
 import SvgUpload from '../icons/upload';
-
+import { useShopSDetails } from '../../Hooks/product/useShop';
 interface closeModalProp {
   onClose: () => void;
 }
 export const ReviewFormModal: React.FC<closeModalProp> = ({ onClose }) => {
+  const { product_id } = useParams();
   return (
-    <div 
-    className="md:w-[35%] w-[96%] bg-[#FFFFFF] 
-     ml-2 shadow-xl  justify-center md:ml-[810px] border py-3 md:pr-6 mt-4 md:mt-[-140px]">
+    <div
+      className="md:w-[35%] w-[96%] bg-[#FFFFFF] 
+     ml-2 shadow-xl  justify-center md:ml-[810px] border py-3 md:pr-6 mt-4 md:mt-[-140px]"
+    >
       <div className=" flex justify-between pl-3">
         <h3 className=" font-clash-display leading-8 font-medium text-[24px] pb-6">
           Product Review Form
         </h3>
-        <SvgClose onClick={onClose} className="w-9 h-7 hover:cursor-pointer"/>
+        <SvgClose onClick={onClose} className="w-9 h-7 hover:cursor-pointer" />
       </div>
 
       <p className="pl-3 font-archivo text-[18px] pb-2">
@@ -42,10 +45,20 @@ export const ReviewFormModal: React.FC<closeModalProp> = ({ onClose }) => {
       </p>
       <div>
         <form action="">
+          <label htmlFor="" className="pl-3 text-gray-500">
+            Title of Review
+          </label>
+          <input
+            type="text"
+            className="border-2 h-[50px] mx-3 w-[95%]  pl-2 mb-4"
+          />
+          <label htmlFor="" className="pl-3 text-gray-500">
+            Description of Review
+          </label>
           <textarea
             name=""
             id=""
-            className="border-2 h-[100px] mx-3 w-[95%] mt-2 pl-2 py-2"
+            className="border-2 h-[100px] mx-3 w-[95%]  pl-2 py-2"
             cols={30}
             rows={10}
             placeholder="Write your review here..."
@@ -72,11 +85,13 @@ export const ReviewFormModal: React.FC<closeModalProp> = ({ onClose }) => {
               <input id="dropzone-file" type="file" className="hidden" />
             </label>
           </div>
-          <div className="text-center py-4">
-            <button className="w-[95%] bg-[#462416] text-white py-4">
-              Post Review
-            </button>
-          </div>
+          <Link to={`/products/item/${product_id}`}>
+            <div className="text-center py-4">
+              <button className="w-[95%] bg-[#462416] text-white py-4">
+                Post Review
+              </button>
+            </div>
+          </Link>
         </form>
       </div>
     </div>

@@ -4,14 +4,28 @@ import SvgDownArrow from '../icons/downarrow';
 import { CustomerReviewData } from './customerReviewData';
 import { ReviewFormModal } from './reviewForm';
 import { useState } from 'react';
-
+import { useShopSDetails } from '../../Hooks/product/useShop';
+import { useParams } from 'react-router-dom';
+import { StarRating } from '../Product/components/StarRating';
 const Review: React.FC = () => {
     const [reviewForm, setReviewForm ] = useState(false)
+    const {product_id } = useParams()
+
+    const {data, isLoading} = useShopSDetails(product_id)
+
+      if(isLoading){
+        return <div>Loading the review Data</div>
+      }
+
+    if(!data){
+      return <div>No product reviews found</div>;
+    }
+
+    const {totalRating, averageRating} = data;
 
     const handleFormModal = ()=>{
        console.log('modal is open');
        return setReviewForm(!reviewForm)
-     
     }
   return (
     <>
@@ -23,24 +37,21 @@ const Review: React.FC = () => {
         </div>
         <div className="pb-2 md:flex">
           <div className="md:pl-[150px] md:w-auto w-[60%] pl-[20px]">
-            <ul className="flex bg-[#FAF9E3] font-archivo leading-[20px] mb-2 py-3 justify-center">
-              <li className="">
-                <SvgStar />
-              </li>
-              <li>
-                <SvgStar />
-              </li>
-              <li>
-                <SvgStar />
-              </li>
-              <li>
-                <SvgStar />
-              </li>
-              <li className="">
-                <p className="text-sm">5 out of 5</p>
-              </li>
-            </ul>
-            <p>Based on 20 reviews</p>
+          {averageRating && (
+        <div className="flex items-center justify-evenly ">
+          <StarRating averageRating={averageRating} />
+          <span className="ml-2 text-gray-600"></span>
+          <span className="text-black">{averageRating} out of 5</span>
+        </div>
+      )}
+      {!averageRating && (
+        <div className="flex justify-between ">
+          <StarRating averageRating={averageRating} />
+          <span className="ml-2 text-gray-600"></span>
+          <span className="text-black">({totalRating}Reviews)</span>
+        </div>
+      )}
+            <p>Based on {totalRating} reviews</p>
           </div>
           <div className="md:pl-[120px]">
             <ul className="flex border-l border-r border-[#E0E0E0] my-2 h-16 md:pl-0 pl-5">

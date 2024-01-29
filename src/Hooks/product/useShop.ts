@@ -12,15 +12,13 @@ const useShop = (page:number) => useQuery({
 })
 export default useShop
 
-
-// export const useWedding = (page:number, categoryId:string) => useQuery({
-//     queryKey: ['product', page],
-//     queryFn: ()=> axios.get(`https://mainsite-yqoe.onrender.com/api/products/${categoryId}?page=${page}`).then((res)=>res.data),
-//     staleTime: 1,
-//     // keepPreviousData : true 
-// })
-export const useShopSDetails = (product_id:any)=> useQuery({
-    queryKey: ['product_id', product_id],
-    queryFn: ()=> axios.get(`https://mainsite-yqoe.onrender.com/api/products/item/${product_id}`).then((res)=>res.data),
-    staleTime: 1,
-})
+export const useShopSDetails = (product_id:any) => {
+    return useQuery({
+      queryKey: ['product_id', product_id],
+      queryFn: () =>
+        axios
+          .get(`https://mainsite-yqoe.onrender.com/api/products/item/${product_id}`)
+          .then((res) => res.data),
+      staleTime: 1,
+    });
+  };

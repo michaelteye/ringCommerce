@@ -121,7 +121,6 @@ export const Login = () => {
           { errors.email && <p className='text-red-400'>{errors.email}</p>}
 
           <br />
-
           <br />
           <label htmlFor="" className="md:pr-[30%]">
             password
